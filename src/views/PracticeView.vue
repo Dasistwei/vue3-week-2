@@ -91,7 +91,7 @@ const addNotifyMessage = (msg) => {
   notify.message = msg;
   setTimeout(() => {
     notify.message = '';
-  }, 2000);
+  }, 5000);
 };
 </script>
 <style>
