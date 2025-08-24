@@ -20,7 +20,7 @@ import ProductNotify from '@/components/practice/ProductNotify.vue';
 import { ref, provide, reactive } from 'vue';
 const cart = ref([]);
 const notify = reactive({ message: '' });
-
+let notifyTimer = null;
 provide('notify', notify);
 provide('removeNotifyMessage', () => {
   notify.message = '';
@@ -89,7 +89,10 @@ const handleRemoveCartItem = (product) => {
 };
 const addNotifyMessage = (msg) => {
   notify.message = msg;
-  setTimeout(() => {
+  if (notifyTimer) {
+    clearTimeout(notifyTimer);
+  }
+  notifyTimer = setTimeout(() => {
     notify.message = '';
   }, 5000);
 };
