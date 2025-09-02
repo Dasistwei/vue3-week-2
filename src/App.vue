@@ -12,6 +12,7 @@ import { RouterLink, RouterView } from 'vue-router';
         <RouterLink to="/todo">week2 - todo</RouterLink>
         <RouterLink to="/week3">week3</RouterLink>
         <RouterLink to="/practice">practice</RouterLink>
+        <RouterLink to="/todoList">todoList</RouterLink>
       </nav>
     </div>
   </header>
