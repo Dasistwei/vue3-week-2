@@ -179,7 +179,7 @@
             </ul>
             <div class="todoList_statistics">
               <p v-if="hasNoTodo">目前尚無待辦事項</p>
-              <p v-else>{{ doneTodos.length }} 個已完成項目</p>
+              <p v-else>{{ todoTodos.length }} 個待完成項目</p>
             </div>
           </div>
         </div>
@@ -207,7 +207,6 @@ const todos = ref([
   { id: 3, content: '整理電腦資料夾', status: STATUS.todo },
   { id: 4, content: '繳電費水費瓦斯費', status: STATUS.todo },
   { id: 5, content: '約vicky禮拜三泡溫泉', status: STATUS.todo },
-  { id: 6, content: '約ada禮拜四吃晚餐', status: STATUS.todo },
 ]);
 const inputTodo = ref('');
 const listStatus = ref('');
@@ -230,8 +229,8 @@ const filteredTodos = computed(() => {
   }
   return todos.value.filter((todo) => todo.status === STATUS[listStatus.value]);
 });
-const doneTodos = computed(() => {
-  return todos.value.filter((todo) => todo.status === STATUS.done);
+const todoTodos = computed(() => {
+  return todos.value.filter((todo) => todo.status === STATUS.todo);
 });
 </script>
 <style>
